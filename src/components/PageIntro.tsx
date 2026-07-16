@@ -14,7 +14,7 @@ function PageIntro({
           {eyebrow}
         </span>
       )}
-      <h1 className="font-heading text-5xl md:text-7xl text-white tracking-tighter mb-6">
+      <h1 className="font-heading text-6xl md:text-8xl text-white tracking-tighter mb-6">
         {title}
       </h1>
       {lede && (
