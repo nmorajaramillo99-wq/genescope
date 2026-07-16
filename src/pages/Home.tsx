@@ -16,7 +16,7 @@ function Home() {
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent z-10" />
 
       <div className="relative z-10 flex flex-col items-center h-full text-center px-6 pt-16 md:pt-20">
-        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white tracking-tight mb-20">
+        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white tracking-tight mb-80">
           Transforming genomic data into scientific and clinical insights.
         </h1>
 
