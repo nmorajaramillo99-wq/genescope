@@ -1,10 +1,9 @@
-# GeneScope
+# Naomi Mora — Personal Portfolio
 
-Single-page marketing site for GeneScope — "Transforming genomic data into
-scientific and clinical insights." Sections are reachable both by clicking
-the nav and by scrolling.
+Academic portfolio site: biotech engineer / bioinformatics researcher working
+on genomics, molecular epidemiology, One Health, and pathogen surveillance.
 
-Stack: React + TypeScript + Tailwind CSS + lucide-react (Vite).
+Stack: React + TypeScript + Tailwind CSS + React Router + Lenis + lucide-react (Vite).
 
 ## Local development
 
@@ -13,69 +12,79 @@ npm install
 npm run dev
 ```
 
+## Site map
+
+```
+/                        Home — hero, name/title/tagline, metrics
+/about                   Story, Skills, Collaborations
+/research                Research Interests, links to the three pages below
+/research/projects       Current Projects
+/research/publications   Publications
+/research/resources      Protocols, scripts, pipelines, datasets
+/experience              Career timeline + Scientific Talks
+/teaching                Teaching & Mentoring
+/blog                    Blog post list
+/news                    Announcements
+/gallery                 Photo grid
+/contact                 Contact form (posts to a Google Sheet)
+```
+
 ## Project structure
 
 ```
 src/
   components/
-    Nav.tsx        fixed liquid-glass nav bar, links scroll to section anchors
-    Footer.tsx      shared footer (phone / email / contact anchor)
-    Section.tsx     shared heading + layout wrapper for content sections
-    Figure.tsx      liquid-glass image frame with optional caption
+    Nav.tsx          fixed liquid-glass nav pill + full-screen menu overlay
+                       (Research expands inline to Projects/Publications/Resources)
+    Footer.tsx        shared footer (profile links, phone, email)
+    PageIntro.tsx      big title block used at the top of every non-Home page
+    Section.tsx        numbered glass-panel content block (used within pages)
+    Figure.tsx         liquid-glass image frame, grayscale by default, color on hover
+    Reveal.tsx         scroll-triggered fade-up wrapper (IntersectionObserver)
+    ScrollToTop.tsx    resets scroll position on route change (via Lenis)
   lib/
-    asset.ts        path helper — always use this for anything in public/,
-                     never a hardcoded "/..." string (see note below)
-  pages/
-    Home.tsx        full-bleed video hero, id="home"
-  sections/
-    QualityControl.tsx      id="qc"
-    SixteenSRrna.tsx        id="16s-rrna"
-    WholeGenomeSequencing.tsx id="wgs"
-    RnaSeq.tsx               id="rna-seq"
-    Contact.tsx              id="contact", posts to Google Sheets
-  App.tsx           renders Nav + Home + all sections + Footer, in order
-  index.css         font import, .liquid-glass, .font-heading, smooth scroll
+    asset.ts          path helper — always use this for anything in public/,
+                       never a hardcoded "/..." string (see note below)
+  pages/               one file per route, see site map above
+  App.tsx              BrowserRouter + Routes + Nav/Footer shell
+  index.css            font import, .liquid-glass, .font-heading, smooth scroll
 public/
-  hero.mp4          background video for the Home hero
+  hero.mp4             background video for the Home hero
   images/
-    qc/              images for the Quality Control section
-    16s-rrna/         images for the 16S rRNA section
-    wgs/              images for the Whole Genome Sequencing section
-    rnaseq/           images for the RNA-seq section
+    about/              lab photo for the About page
+    gallery/            gallery photos
+    collaborations/     (unused for now — Collaborations renders as text
+                          pills; swap in logos here if you want images instead)
 ```
 
 ### Why `asset.ts` matters
 
 Anything referenced with a hardcoded `/path` (e.g. `src="/hero.mp4"`) breaks
-once the site is deployed under `https://<user>.github.io/genescope/` —
-`/hero.mp4` resolves to the domain root, not `/genescope/hero.mp4`, and
-404s. This bit us twice already (favicon, hero video). `asset('images/...')`
-always prepends the correct base path, so use it for every image, video, or
-other file under `public/`.
+once the site is deployed under `https://<user>.github.io/<repo>/` —
+`/hero.mp4` resolves to the domain root, not `/<repo>/hero.mp4`, and 404s.
+`asset('images/...')` always prepends the correct base path, so use it for
+every image, video, or other file under `public/`.
 
-## Where to put your pictures
+## What's real content vs. placeholder
 
-Each section already has an `<img>` slot wired up and waiting — just drop
-files into the matching folder using these exact names (or edit the `src`
-prop in the section file if you'd rather use different filenames):
+Filled in as real content (from what you provided): Research Interests
+categories, the Experience timeline (INSPI / BioElite / USFQ), and the Home
+page metrics (15 publications, 9 projects, etc.).
 
-| Section | File to add | Used in |
-|---|---|---|
-| Quality Control | `public/images/qc/fastqc-before.jpeg` (raw reads) | `src/sections/QualityControl.tsx` |
-| Quality Control | `public/images/qc/fastqc-after.jpeg` (trimmed reads) | `src/sections/QualityControl.tsx` |
-| 16S rRNA | `public/images/16s-rrna/pcoa-plot.png` | `src/sections/SixteenSRrna.tsx` |
-| 16S rRNA | `public/images/16s-rrna/alpha-diversity.png` | `src/sections/SixteenSRrna.tsx` |
-| Whole Genome Sequencing | `public/images/wgs/phylogenomic-heatmap.png` | `src/sections/WholeGenomeSequencing.tsx` |
-| RNA-seq | `public/images/rnaseq/volcano-plot.jpeg` | `src/sections/RnaSeq.tsx` |
-| RNA-seq | `public/images/rnaseq/pca-plot.jpeg` | `src/sections/RnaSeq.tsx` |
+Still placeholder — replace before this is truly done:
 
-Until a file exists at that path, the browser just shows a broken-image icon
-with the `alt` text — harmless, and it'll fix itself the moment you add the
-file. No code changes needed; `npm run dev` picks up new files in `public/`
-immediately, and pushing to `main` redeploys automatically.
-
-If you want to swap an image's expected filename, or add more images to a
-section, just edit the `<Figure src="..." />` calls in that section's file.
+| Page | What's missing |
+|---|---|
+| About | Your personal story (currently just guiding prompts), a lab photo at `public/images/about/lab-photo.jpg` |
+| Research → Publications | Only one seeded entry (Histoplasma paper) — verify its title/DOI, then add the rest of your bibliography |
+| Research → Projects | Objective/methodology/collaborators/related publications are placeholder text on all three cards |
+| Research → Resources | All six resource links are placeholders — attach real files or repo URLs |
+| Experience | Scientific Talks section has two placeholder entries |
+| Teaching | No real content yet — five empty category cards |
+| Blog | Post titles are draft ideas, not written posts |
+| News | Empty |
+| Gallery | No photos yet — drop files into `public/images/gallery/` using the filenames listed in `src/pages/Gallery.tsx` |
+| Footer | LinkedIn / GitHub / ORCID / Google Scholar / ResearchGate links all point to `#` — add your real profile URLs |
 
 ## Contact form → Google Sheet
 
@@ -110,42 +119,37 @@ row to a Google Sheet. Setup (one-time, in your own Google account):
    `VITE_CONTACT_SHEET_URL` with the same URL. The deploy workflow already
    passes it into the build.
 
-Every submission appends a new row to that Sheet — no server to maintain,
-and the data lives in your own Google Drive so it's trivially exportable /
-shareable.
+## Adding a new page
 
-## Adding a new section
+1. Create `src/pages/YourPage.tsx`:
 
-Follow the pattern in `src/sections/`:
+   ```tsx
+   import PageIntro from '../components/PageIntro'
+   import Section from '../components/Section'
 
-```tsx
-import Section from '../components/Section'
-import Figure from '../components/Figure'
+   function YourPage() {
+     return (
+       <div className="min-h-screen bg-black">
+         <PageIntro eyebrow="Eyebrow" title="Your Page" />
+         <Section id="content" index={1} title="Section Title">
+           <p className="text-white/70 text-sm leading-relaxed">Content goes here.</p>
+         </Section>
+       </div>
+     )
+   }
 
-function YourSection() {
-  return (
-    <Section id="your-section" title="Your Section">
-      <div className="grid md:grid-cols-2 gap-10 items-start">
-        <p className="text-white/70 text-sm leading-relaxed">Content goes here.</p>
-        <Figure src="images/your-section/chart.png" alt="Description" />
-      </div>
-    </Section>
-  )
-}
+   export default YourPage
+   ```
 
-export default YourSection
-```
-
-Then register it in `src/App.tsx` (add the import + render it in the order
-you want it to appear), and add a link to `NAV_LINKS` in
-`src/components/Nav.tsx` if it should be clickable from the nav bar
-(`href` should be `#your-section` to match the `id`).
+2. Register the route in `src/App.tsx`.
+3. Add it to `NAV_LINKS` (or `RESEARCH_LINKS` for a Research sub-page) in
+   `src/components/Nav.tsx` if it should appear in the menu.
 
 ## Publishing to GitHub Pages
 
 Already wired up via `.github/workflows/deploy.yml` — every push to `main`
-rebuilds and redeploys automatically. See git history for how the repo was
-first connected, or:
+rebuilds and redeploys automatically, including the 404.html fallback that
+makes client-side routes (e.g. `/research/projects`) survive a hard refresh.
 
 ```bash
 git add .
