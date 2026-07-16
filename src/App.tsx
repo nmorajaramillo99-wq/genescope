@@ -1,25 +1,24 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Nav from './components/Nav'
+import Footer from './components/Footer'
 import Home from './pages/Home'
-import Platform from './pages/Platform'
-import Science from './pages/Science'
-import Clinical from './pages/Clinical'
-import Company from './pages/Company'
-import Contact from './pages/Contact'
-import NotFound from './pages/NotFound'
+import QualityControl from './sections/QualityControl'
+import SixteenSRrna from './sections/SixteenSRrna'
+import WholeGenomeSequencing from './sections/WholeGenomeSequencing'
+import RnaSeq from './sections/RnaSeq'
+import Contact from './sections/Contact'
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/platform" element={<Platform />} />
-        <Route path="/science" element={<Science />} />
-        <Route path="/clinical" element={<Clinical />} />
-        <Route path="/company" element={<Company />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="bg-black">
+      <Nav />
+      <Home />
+      <QualityControl />
+      <SixteenSRrna />
+      <WholeGenomeSequencing />
+      <RnaSeq />
+      <Contact />
+      <Footer />
+    </div>
   )
 }
 
