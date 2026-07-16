@@ -3,7 +3,7 @@ import Figure from '../components/Figure'
 
 function RnaSeq() {
   return (
-    <Section id="rna-seq" title="RNA-seq">
+    <Section id="rna-seq" index={4} title="RNA-seq">
       <div className="grid md:grid-cols-2 gap-10 items-start">
         <div className="text-white/70 text-sm leading-relaxed space-y-4">
           <p>

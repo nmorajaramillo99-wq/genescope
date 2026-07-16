@@ -3,7 +3,7 @@ import Figure from '../components/Figure'
 
 function QualityControl() {
   return (
-    <Section id="qc" title="Quality Control (QC)">
+    <Section id="qc" index={1} title="Quality Control (QC)">
       <div className="grid md:grid-cols-2 gap-10 items-start">
         <div className="text-white/70 text-sm leading-relaxed space-y-4">
           <p>

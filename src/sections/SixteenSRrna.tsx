@@ -3,7 +3,7 @@ import Figure from '../components/Figure'
 
 function SixteenSRrna() {
   return (
-    <Section id="16s-rrna" title="16S rRNA">
+    <Section id="16s-rrna" index={2} title="16S rRNA">
       <div className="grid md:grid-cols-2 gap-10 items-start">
         <div className="text-white/70 text-sm leading-relaxed space-y-4">
           <p className="text-white font-semibold">

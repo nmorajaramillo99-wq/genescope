@@ -31,10 +31,10 @@ function Contact() {
   }
 
   return (
-    <Section id="contact" title="Contact us">
+    <Section id="contact" index={5} title="Contact us">
       <form
         onSubmit={handleSubmit}
-        className="liquid-glass rounded-3xl p-6 md:p-8 max-w-lg flex flex-col gap-4"
+        className="max-w-lg flex flex-col gap-4"
       >
         <label className="text-white/70 text-sm flex flex-col gap-1">
           Name
