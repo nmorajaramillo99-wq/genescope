@@ -44,12 +44,12 @@ function RnaSeq() {
         </div>
         <div className="grid gap-6">
           <Figure
-            src="images/rnaseq/volcano-plot.png"
+            src="images/rnaseq/volcano-plot.jpeg"
             alt="Volcano plot of differentially expressed genes"
             caption="Differential expression — volcano plot"
           />
           <Figure
-            src="images/rnaseq/pca-plot.png"
+            src="images/rnaseq/pca-plot.jpeg"
             alt="PCA plot of RNA-seq sample clusters"
             caption="Sample clustering — PCA plot"
           />

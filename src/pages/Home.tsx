@@ -15,15 +15,10 @@ function Home() {
 
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent z-10" />
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-        <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-white tracking-tight mb-8">
+      <div className="relative z-10 flex flex-col items-center h-full text-center px-6 pt-32 md:pt-40">
+        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white tracking-tight mb-8">
           Transforming genomic data into scientific and clinical insights.
         </h1>
-        <p className="text-white/80 text-sm max-w-xl leading-relaxed mb-8">
-          GeneScope turns raw sequencing data into decision-ready insight,
-          bridging discovery research and clinical care with a single
-          platform.
-        </p>
 
         <form className="liquid-glass rounded-full flex items-center pl-6 pr-2 py-2 w-full max-w-md">
           <input

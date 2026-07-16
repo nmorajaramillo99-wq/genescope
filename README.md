@@ -61,12 +61,13 @@ prop in the section file if you'd rather use different filenames):
 
 | Section | File to add | Used in |
 |---|---|---|
-| Quality Control | `public/images/qc/fastqc-report.png` | `src/sections/QualityControl.tsx` |
+| Quality Control | `public/images/qc/fastqc-before.jpeg` (raw reads) | `src/sections/QualityControl.tsx` |
+| Quality Control | `public/images/qc/fastqc-after.jpeg` (trimmed reads) | `src/sections/QualityControl.tsx` |
 | 16S rRNA | `public/images/16s-rrna/pcoa-plot.png` | `src/sections/SixteenSRrna.tsx` |
 | 16S rRNA | `public/images/16s-rrna/alpha-diversity.png` | `src/sections/SixteenSRrna.tsx` |
 | Whole Genome Sequencing | `public/images/wgs/phylogenomic-heatmap.png` | `src/sections/WholeGenomeSequencing.tsx` |
-| RNA-seq | `public/images/rnaseq/volcano-plot.png` | `src/sections/RnaSeq.tsx` |
-| RNA-seq | `public/images/rnaseq/pca-plot.png` | `src/sections/RnaSeq.tsx` |
+| RNA-seq | `public/images/rnaseq/volcano-plot.jpeg` | `src/sections/RnaSeq.tsx` |
+| RNA-seq | `public/images/rnaseq/pca-plot.jpeg` | `src/sections/RnaSeq.tsx` |
 
 Until a file exists at that path, the browser just shows a broken-image icon
 with the `alt` text — harmless, and it'll fix itself the moment you add the

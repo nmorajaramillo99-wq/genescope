@@ -39,11 +39,18 @@ function QualityControl() {
             us validate your data before you begin.
           </p>
         </div>
-        <Figure
-          src="images/qc/fastqc-report.png"
-          alt="FastQC per-base sequence quality report"
-          caption="Per-base sequence quality report"
-        />
+        <div className="grid gap-6">
+          <Figure
+            src="images/qc/fastqc-before.jpeg"
+            alt="FastQC per-base sequence quality report before trimming"
+            caption="Before QC — per-base sequence quality"
+          />
+          <Figure
+            src="images/qc/fastqc-after.jpeg"
+            alt="FastQC per-base sequence quality report after trimming"
+            caption="After QC — per-base sequence quality"
+          />
+        </div>
       </div>
     </Section>
   )
