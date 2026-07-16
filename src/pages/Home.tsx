@@ -10,7 +10,7 @@ function Home() {
         muted
         loop
         playsInline
-        src="/hero.mp4"
+        src={`${import.meta.env.BASE_URL}hero.mp4`}
       />
 
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent z-10" />
