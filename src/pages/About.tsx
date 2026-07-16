@@ -21,14 +21,12 @@ function About() {
       <Section id="story" index={1} title="How I got here">
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <div className="text-white/70 text-sm leading-relaxed space-y-4">
-            <ul className="list-disc list-inside space-y-1">
-              <li> My journey into biotechnology began with a simple fascination: understanding the invisible world that shapes life. I was captivated by how microorganisms, genes, and molecular interactions influence ecosystems, animal health, and human disease. That curiosity led me to pursue a degree in Biotechnology, where I discovered not only the power of molecular biology, but also the impact that scientific research can have beyond the laboratory.</li>
-              <li> Early in my career, I joined Ecuador's National Institute of Public Health (INSPI), where I had the opportunity to work on infectious disease surveillance during a period of increasing public health challenges. There, science became more than experiments and protocols, it became a tool for understanding disease outbreaks, supporting decision-making, and ultimately protecting communities. <li>
-              </li> Working on zoonotic diseases, pathogen surveillance, and outbreak investigations showed me how closely human, animal, and environmental health are connected, reinforcing my commitment to the One Health approach.</li>
-              <li> As sequencing technologies became an increasingly important part of our work, I realized that generating genomic data was only the beginning. The real challenge—and opportunity—was transforming millions of sequencing reads into meaningful biological insights. This realization sparked my interest in bioinformatics. I pursued a Master's degree in Bioinformatics to bridge molecular biology with computational analysis, learning to combine genomics, programming, statistics, and data science to answer complex biological questions.<li>
-              </li> Today, my research lies at the intersection of genomics, bioinformatics, and public health. I work with next-generation sequencing technologies, molecular diagnostics, and computational methods to investigate infectious diseases, characterize microbial communities, and strengthen genomic surveillance. I am particularly interested in developing practical genomic tools that can improve disease detection and support evidence-based public health strategies, especially in regions where these technologies are still emerging.
-                As genomics becomes an essential component of global health, I hope to contribute to building stronger genomic surveillance systems and advancing research that helps countries better prepare for emerging infectious diseases. Every project I undertake is guided by the same question that first inspired me to study biotechnology: how can we use science to better understand—and ultimately improve—the health of people, animals, and our shared environment?</li>
-            </ul>
+            <p>
+              I'm a biotechnology engineer and bioinformatician passionate about applying genomics to solve public health challenges. My work combines molecular biology, next-generation sequencing, and computational analysis to better understand infectious diseases and strengthen genomic surveillance.
+            </p>
+            <p>
+              My research has taken me from the laboratory to large-scale genomic data analysis, where I discovered that answering biological questions requires both experimental and computational approaches. Today, I focus on developing practical genomic solutions that support disease surveillance through a One Health perspective.
+            </p>
           </div>
           <Figure
             src="images/about/lab-photo.png"
