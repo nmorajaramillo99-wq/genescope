@@ -13,7 +13,7 @@ const PHOTOS = [
 
 function Gallery() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <PageIntro
         eyebrow="Gallery"
         title="Gallery"

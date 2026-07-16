@@ -31,7 +31,7 @@ function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <PageIntro
         eyebrow="Get in touch"
         title="Contact"

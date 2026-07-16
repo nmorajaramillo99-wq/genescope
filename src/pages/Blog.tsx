@@ -13,7 +13,7 @@ const DRAFT_POSTS = [
 
 function Blog() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <PageIntro
         eyebrow="Writing"
         title="Blog"

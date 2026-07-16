@@ -3,7 +3,7 @@ import Section from '../components/Section'
 
 function News() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <PageIntro eyebrow="Updates" title="News" />
 
       <Section id="news" index={1} title="Announcements">

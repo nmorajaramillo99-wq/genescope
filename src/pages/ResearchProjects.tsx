@@ -21,7 +21,7 @@ const PROJECTS = [
 
 function ResearchProjects() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <PageIntro eyebrow="Research" title="Current Projects" />
 
       <Section id="projects" index={1} title="Active Work">

@@ -11,7 +11,7 @@ const CATEGORIES = [
 
 function Teaching() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <PageIntro eyebrow="Teaching" title="Teaching & Mentoring" />
 
       <Section id="teaching" index={1} title="Activities">

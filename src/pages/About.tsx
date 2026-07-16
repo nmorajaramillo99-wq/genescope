@@ -15,7 +15,7 @@ const COLLABORATIONS = ['INSPI', 'USFQ', 'Imperial College', 'Johns Hopkins', 'B
 
 function About() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <PageIntro eyebrow="About" title="My Story" />
 
       <Section id="story" index={1} title="How I got here">

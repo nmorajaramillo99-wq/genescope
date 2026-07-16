@@ -14,7 +14,7 @@ const TALKS = [
 
 function Experience() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <PageIntro eyebrow="Career" title="Experience" />
 
       <Section id="timeline" index={1} title="Timeline">

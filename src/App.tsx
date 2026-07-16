@@ -1,9 +1,10 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { ReactLenis } from 'lenis/react'
 import 'lenis/dist/lenis.css'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import AmbientBackground from './components/AmbientBackground'
 import Home from './pages/Home'
 import About from './pages/About'
 import Research from './pages/Research'
@@ -18,13 +19,16 @@ import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 
-function App() {
+function AppShell() {
+  const location = useLocation()
+
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <ReactLenis root options={{ duration: 1.2, anchors: { offset: -96 } }}>
-        <ScrollToTop />
-        <div className="bg-black">
-          <Nav />
+    <>
+      <ScrollToTop />
+      <div className="relative bg-black">
+        {location.pathname !== '/' && <AmbientBackground />}
+        <Nav />
+        <div className="relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -42,6 +46,16 @@ function App() {
           </Routes>
           <Footer />
         </div>
+      </div>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <ReactLenis root options={{ duration: 1.2, anchors: { offset: -96 } }}>
+        <AppShell />
       </ReactLenis>
     </BrowserRouter>
   )

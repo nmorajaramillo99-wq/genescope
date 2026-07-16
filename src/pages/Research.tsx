@@ -33,7 +33,7 @@ const SUB_PAGES = [
 
 function Research() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <PageIntro
         eyebrow="Research"
         title="Research Interests"

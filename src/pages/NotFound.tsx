@@ -3,7 +3,7 @@ import PageIntro from '../components/PageIntro'
 
 function NotFound() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <PageIntro eyebrow="404" title="Page not found" />
       <div className="text-center pb-24">
         <Link to="/" className="text-white/70 hover:text-white text-sm underline">
